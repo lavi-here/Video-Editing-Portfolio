@@ -1,0 +1,120 @@
+/* ==========================================================================
+   VERTICAL COLLECTIONS THEME STYLES & UTILITY ACCENTS
+   ========================================================================== */
+
+/* Dark Mode Collection Accent */
+.vertical-edits-dark {
+  background: #09090e;
+  color: var(--paper);
+}
+
+.vertical-edits-dark .group-title-bar {
+  background: #13131c;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.vertical-edits-dark .group-num {
+  background: rgba(255, 59, 48, 0.15);
+  border-color: rgba(255, 59, 48, 0.35);
+  color: var(--hot);
+}
+
+.vertical-edits-dark .reel-caption p {
+  color: var(--paper-muted);
+}
+
+/* Acid Neon Collection Accent */
+.vertical-edits-acid {
+  background: #0d0e09;
+  color: var(--paper);
+}
+
+.vertical-edits-acid .group-title-bar {
+  background: rgba(204, 255, 0, 0.08);
+  border-color: rgba(204, 255, 0, 0.25);
+}
+
+.vertical-edits-acid .group-num {
+  background: var(--acid);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* Video Placeholder Utility Boxes (Fallback / Future Custom Video Slots) */
+.vertical-placeholder {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  min-height: 100%;
+  padding: 20px;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--ink);
+  background: var(--hot);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line-strong);
+}
+
+.vertical-placeholder::before,
+.vertical-placeholder::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.vertical-placeholder::before {
+  right: -30%;
+  bottom: -10%;
+  width: 120%;
+  aspect-ratio: 1;
+  background: repeating-radial-gradient(circle, #ffce26 0 4px, #e93e24 5px 11px);
+}
+
+.vertical-placeholder::after {
+  left: -40%;
+  top: 15%;
+  width: 90%;
+  aspect-ratio: 1;
+  border: 3px solid var(--ink);
+}
+
+.vertical-placeholder span,
+.vertical-placeholder small {
+  font: 600 10px var(--mono);
+  letter-spacing: 0.08em;
+}
+
+.vertical-placeholder strong {
+  font: 800 clamp(24px, 3.2vw, 44px)/0.8 var(--display);
+  letter-spacing: -0.06em;
+}
+
+.placeholder-blue {
+  color: var(--paper);
+  background: #2b49dc;
+}
+.placeholder-blue::before { background: var(--acid); }
+.placeholder-blue::after { border-color: var(--paper); border-radius: 0; transform: rotate(45deg); }
+
+.placeholder-yellow {
+  color: var(--ink);
+  background: #ffce26;
+}
+.placeholder-yellow::before { background: var(--ink); width: 130%; bottom: -20%; right: -40%; }
+.placeholder-yellow::after { top: 10%; left: 15%; width: 70%; background: repeating-linear-gradient(45deg, transparent 0 10px, var(--hot) 11px 16px); border: 0; border-radius: 0; transform: rotate(-12deg); }
+
+.placeholder-green {
+  color: var(--paper);
+  background: #0c8d69;
+}
+.placeholder-green::before { background: var(--hot); bottom: 10%; right: -25%; }
+.placeholder-green::after { top: 20%; left: -30%; width: 110%; border-color: var(--acid); }
+
+.placeholder-violet {
+  color: var(--paper);
+  background: #8d56ff;
+}
+.placeholder-violet::before { background: conic-gradient(var(--acid), var(--hot), var(--ink), var(--acid)); }
+.placeholder-violet::after { border-color: var(--paper); }
