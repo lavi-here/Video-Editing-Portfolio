@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-open-showreel]').forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      openCinemaPlayer('PORTFOLIO.mp4', 'LAVI PAL — 2026 MASTER SHOWREEL', 'LAVI PAL / DIRECTORS CUT', '4K 60FPS · 00:58 DURATION');
+      openCinemaPlayer('https://res.cloudinary.com/aovles4c/video/upload/v1790270425/PORTFOLIO.mp4', 'LAVI PAL — 2026 MASTER SHOWREEL', 'LAVI PAL / DIRECTORS CUT', '4K 60FPS · 00:58 DURATION');
     });
   });
 
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Avoid triggering if sound toggle was clicked
       if (e.target.closest('.card-sound-btn')) return;
 
-      const src = card.getAttribute('data-video-src') || 'PORTFOLIO.mp4';
+      const src = card.getAttribute('data-video-src') || 'https://res.cloudinary.com/aovles4c/video/upload/v1790270425/PORTFOLIO.mp4';
       const title = card.getAttribute('data-title') || 'PROJECT VIDEO';
       const client = card.getAttribute('data-client') || 'CLIENT PROJECT';
       const duration = card.getAttribute('data-duration') || '00:30';
