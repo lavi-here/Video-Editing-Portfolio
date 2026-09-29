@@ -147,22 +147,18 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ==========================================================================
      6. Cinema Video Player Modal
      ========================================================================== */
-  const cinemaModal = document.getElementById('cinema-modal');
+   const cinemaModal = document.getElementById('cinema-modal');
   const modalVideo = document.getElementById('modal-video-element');
   const modalVideoSource = document.getElementById('modal-video-source');
   const modalTitle = document.getElementById('modal-title');
-  const modalClient = document.getElementById('modal-client');
-  const modalSpecs = document.getElementById('modal-specs');
   const modalCloseBtn = document.getElementById('modal-close-btn');
 
-  function openCinemaPlayer(src, title = 'LAVI PAL — 2026 MASTER SHOWREEL', client = 'LUMIERE / LAVI PAL', specs = '4K 60FPS · PRORES 422 · DAVINCI COLOR') {
+  function openCinemaPlayer(src, title = 'LAVI PAL — 2026 MASTER SHOWREEL') {
     if (!cinemaModal || !modalVideo || !modalVideoSource) return;
 
     modalVideoSource.src = src;
     modalVideo.load();
     if (modalTitle) modalTitle.textContent = title;
-    if (modalClient) modalClient.textContent = `CLIENT: ${client}`;
-    if (modalSpecs) modalSpecs.textContent = specs;
 
     cinemaModal.showModal();
     modalVideo.play().catch(() => {});
@@ -178,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-open-showreel]').forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      openCinemaPlayer('https://res.cloudinary.com/aovles4c/video/upload/v1790270425/PORTFOLIO.mp4', 'LAVI PAL — 2026 MASTER SHOWREEL', 'LAVI PAL / DIRECTORS CUT', '4K 60FPS · 00:58 DURATION');
+      openCinemaPlayer('https://res.cloudinary.com/aovles4c/video/upload/v1790270425/PORTFOLIO.mp4', 'LAVI PAL — 2026 MASTER SHOWREEL');
     });
   });
 
@@ -193,9 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const src = card.getAttribute('data-video-src') || 'https://res.cloudinary.com/aovles4c/video/upload/v1790270425/PORTFOLIO.mp4';
       const title = card.getAttribute('data-title') || 'PROJECT VIDEO';
-      const client = card.getAttribute('data-client') || 'CLIENT PROJECT';
-      const duration = card.getAttribute('data-duration') || '00:30';
-      openCinemaPlayer(src, title, client, `VERTICAL 9:16 · ${duration} · 4K 60FPS`);
+      openCinemaPlayer(src, title);
     };
 
     expandBtn?.addEventListener('click', triggerExpand);
