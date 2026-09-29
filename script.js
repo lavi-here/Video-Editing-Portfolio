@@ -487,31 +487,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const projectForm = document.getElementById('project-form');
   const submitBtn = document.getElementById('submit-btn');
 
-  projectForm?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const nameInput = document.getElementById('form-name');
-    const name = nameInput?.value || 'Friend';
 
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span>TRANSMITTING INQUIRY...</span> <span>⏳</span>';
-    }
-
-    setTimeout(() => {
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = '<span>INQUIRY RECEIVED ✓</span>';
-      }
-      showToast(`✓ Thank you ${name}! Your brief has been sent. Expect a response within 12h.`);
-      projectForm.reset();
-
-      setTimeout(() => {
-        if (submitBtn) {
-          submitBtn.innerHTML = '<span>SEND INQUIRY</span> <span class="btn-arrow">↗</span>';
-        }
-      }, 4000);
-    }, 1200);
-  });
 
   /* ==========================================================================
      14. Live Timezone Clock
